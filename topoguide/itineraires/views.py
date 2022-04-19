@@ -14,6 +14,9 @@ def logout_view(request):
     # Redirect to a success page.
     return HttpResponse("Déconnection réussie")
 
+def itinerairesList(request):
+    return HttpResponse("Liste des itinéraires : ...")
+
 
 @login_required()
 def loginIndex(request):
