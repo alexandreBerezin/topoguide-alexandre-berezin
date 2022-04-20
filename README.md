@@ -16,7 +16,8 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 
 
 3. Une page de liste des sorties partagées pour un itinéraire particulier
-    basique 
+    modèle d'une sortie //OK
+    basique //OK
 
 4. Visualisation d'une sortie
     basique

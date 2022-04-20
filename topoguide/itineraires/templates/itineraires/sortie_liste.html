@@ -1,0 +1,11 @@
+
+{% if liste_Sortie %}
+{% for sortie in liste_Sortie %}
+{{ sortie.user }} et {{sortie.sortie_itineraire}}
+{% endfor %}
+{% else %}
+
+
+Pas de sorties renseignés
+
+{% endif %}
