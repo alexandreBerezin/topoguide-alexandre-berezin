@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import logout
 
+from itineraires.models import Itineraire
+
 
 def index(request):
     return HttpResponse("Index de l'application itineraires: pour se connecteur cliquer ici : ")
@@ -14,8 +16,11 @@ def logout_view(request):
     # Redirect to a success page.
     return HttpResponse("Déconnection réussie")
 
-def itinerairesList(request):
-    return HttpResponse("Liste des itinéraires : ...")
+
+def listeItineraires(request):
+    liste_Itineraires = Itineraire.objects.all()
+    context = {'liste_Itineraires': liste_Itineraires}
+    return render(request, 'itineraires/itineraires_liste.html', context)
 
 
 @login_required()

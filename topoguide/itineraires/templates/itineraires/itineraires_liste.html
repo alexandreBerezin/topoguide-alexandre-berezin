@@ -1,0 +1,11 @@
+
+{% if liste_Itineraires %}
+{% for itineraire in liste_Itineraires %}
+{{ itineraire.title }}
+{% endfor %}
+{% else %}
+
+
+Pas d'itinéraires enregistrés
+
+{% endif %}
