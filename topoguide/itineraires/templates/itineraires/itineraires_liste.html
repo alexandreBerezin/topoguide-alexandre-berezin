@@ -1,7 +1,10 @@
+{% extends 'itineraires/base_logged.html' %}
 
-<h1>Topoguide</h1>
-<h2>Liste des itinéraires disponible </h2>
 
+
+{% block content %}
+
+<h2>Liste des itinéraires: </h2>
 
 {% if liste_Itineraires %}
 <ul>
@@ -17,16 +20,5 @@ Pas d'itinéraires enregistrés
 
 {% endif %}
 
-<form action= {% url 'itineraires:mesSorties'%} >
-  <button type="submit">Mes Sorties</button>
-</form>
-
-
-<form action= {% url 'itineraires:creerSortie'%} >
-  <button type="submit">créer une sortie</button>
-</form>
-
-<form action= {% url 'itineraires:logout'%} >
-    <button type="submit">Se deconnecter</button>
-  </form>
+{% endblock %}
 

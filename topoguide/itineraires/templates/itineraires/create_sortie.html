@@ -1,6 +1,17 @@
-<form action="{% url 'itineraires:creerSortie' %}"
+{% extends 'itineraires/base_logged.html' %}
+
+
+{% block content %}
+
+<form action= {% url 'itineraires:creerSortie' %},
 method="post">
 {% csrf_token %}
 {{ form.as_p }}
-<input type="submit">Add</button>
+<input type="submit">
 </form>
+
+
+{% endblock %}
+
+
+

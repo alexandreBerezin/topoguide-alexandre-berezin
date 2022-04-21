@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Topoguide</h1>
+
+
+        <table class="center">
+            <tr>
+              <th>
+                <form action= {% url 'itineraires:mesSorties'%} >
+                    <button type="submit">Mes Sorties</button>
+                </form>
+              </th>
+
+              <th>
+                <form action= {% url 'itineraires:itinerairesList'%} >
+                    <button type="submit">liste des itinéraires</button>
+                </form>
+
+            </th>
+              <th>
+                <form action= {% url 'itineraires:creerSortie'%} >
+                    <button type="submit">créer une sortie</button>
+                </form>
+              </th>
+              <th>
+                <form action= {% url 'itineraires:logout'%} >
+                    <button type="submit">Se deconnecter</button>
+                </form>
+              </th>
+            </tr>
+        </table>
+        
+
+
+        {% block content %}
+        
+        {% endblock %}
+
+
+
+        
+          
+          
+
+          
+
+          
+
+    </body>
+</html>
