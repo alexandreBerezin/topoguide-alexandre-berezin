@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1>Topoguide</h1>
+        {% load static %}
+
+
+
+        <h1><img src="{% static 'itineraires/rando.png' %}"  width="50" height="50"> Topoguide  </h1>
 
         <p> utilisateur : {{ username}} </p>
 
@@ -20,7 +24,7 @@
                   <button type="submit">Mes Sorties</button>
               </form>
             </th>
-            
+
               <th>
                 <form action= {% url 'itineraires:creerSortie'%} >
                     <button type="submit">créer une sortie</button>

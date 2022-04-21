@@ -5,7 +5,8 @@
 <html>
     <body>
         
-        <h1>Topoguide</h1>
+        {% load static %}
+        <h1><img src="{% static 'itineraires/rando.png' %}"  width="50" height="50"> Topoguide  </h1>
         <h2>L'application de randonnée </h2>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
