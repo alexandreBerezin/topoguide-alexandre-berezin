@@ -3,8 +3,7 @@
 
 {% block content %}
 
-<form action= {% url 'itineraires:creerSortie' %},
-method="post">
+<form action= {% url 'itineraires:creerSortie' %} method="post">
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit">

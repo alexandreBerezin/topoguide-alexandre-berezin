@@ -1,0 +1,51 @@
+{% extends 'itineraires/base_logged.html' %}
+
+
+{% block content %}
+
+<h3> detail de la sortie {{sortie}} <h3>
+
+{% if sortie %}
+
+<body>
+<table border="1">
+    <thead>
+        <tr>
+            <th>utilisateur</th>
+            <th>itinereaire</th>
+            <th>date</th>
+            <th>durée réelle</th>
+            <th>nombre de presonnes</th>
+            <th>groupe_experience</th>
+            <th>météo</th>
+            <th>difficulté ressentie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{sortie.user}}</td>
+            <td>{{itineraire.title}}</td>
+            <td>{{sortie.date}}</td>
+            <td>{{sortie.duree_reelle}}</td>
+            <td>{{sortie.nombre_personnes}}</td>
+            <td>{{sortie.groupe_experience}}</td>
+            <td>{{sortie.meteo}}</td>
+            <td>{{sortie.difficulte_ressentie}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+
+
+{% else %}
+
+
+Pas de sortie enregistré à cet id 
+
+{% endif %}
+
+
+
+{% endblock %}
+

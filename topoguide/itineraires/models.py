@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Itineraire(models.Model):
     title = models.CharField(max_length=200)
     start = models.CharField(max_length=200)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=5000)
     altitude_start = models.IntegerField()
     altitude_min = models.IntegerField()
     altitude_max = models.IntegerField()

@@ -13,4 +13,6 @@ urlpatterns = [
     path('sorties/create', views.create_sortie, name='creerSortie'),
     path('sorties/update/<int:id_sortie>', views.update_sortie, name='modifierSortie'),
     path('sorties/mySorties', views.mySorties, name='mesSorties'),
+    path('sorties/detail/<int:id_sortie>', views.detail_sortie, name='detail_sortie'),
+    
 ]

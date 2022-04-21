@@ -1,5 +1,43 @@
-<h1>Topoguide</h1>
-<h2>itineraire: {{titre_itineraire }} </h2>
+{% extends 'itineraires/base_logged.html' %}
+
+
+{% block content %}
+
+<h3>détail de l'intinéraire : {{itineraire.title}}  </h3>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Départ</th>
+            <th>Altitude de départ</th>
+            <th>Altitude min</th>
+            <th>Altitude max</th>
+            <th>denivelé positif</th>
+            <th>dénivelé négatif</th>
+            <th>durée estimée</th>
+            <th>difficulté</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{itineraire.start}}</td>
+            <td>{{itineraire.altitude_start}}</td>
+            <td>{{itineraire.altitude_min}}</td>
+            <td>{{itineraire.altitude_max}}</td>
+            <td>{{itineraire.denivele_positif}}</td>
+            <td>{{itineraire.denivele_negatif}}</td>
+            <td>{{itineraire.duree_estimee}}</td>
+            <td>{{itineraire.difficulte}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4> description </h4>
+
+<p> {{itineraire.description}} </p>
+
+
+
+
 <h3>Liste des sorties disponibles:  </h3>
 
 {% if liste_Sortie %}
@@ -13,7 +51,8 @@
         <tr>
             {% for sortie in liste_Sortie %}
             <td>{{ sortie.user }}</td>
-            <td>{{sortie.sortie_itineraire}}</td>
+            <td>{{sortie.date}}</td>
+            <td> <a href= {% url 'itineraires:detail_sortie' sortie.id %}> detail   </a> </td>
             {% endfor %}
         </tr>
     </tbody>
@@ -27,11 +66,5 @@ Pas de sorties renseignés
 
 {% endif %}
 
-<form action= {% url 'itineraires:itinerairesList'%} >
-    <button type="submit">liste des itinéraires</button>
-  </form>
+{% endblock %}
 
-  
-  <form action= {% url 'itineraires:logout'%} >
-      <button type="submit">Se deconnecter</button>
-    </form>
