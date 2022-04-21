@@ -9,16 +9,17 @@
 <table>
     <thead>
         <tr>
-            <th>Liste de sorties</th>
+            <th>itinéraire</th>
+            <th>date</th>
         </tr>
     </thead>
     <tbody>
       {% for sortie in liste_Sortie %}
         <tr>
-            <td>  {{ sortie.user }}  </td>
-            <td>{{ sortie.sortie_itineraire}}</td>
-            <td> <a href= {% url 'itineraires:detail_sortie' sortie.id %}>  detail   </a> </td>
-            <td> <a href= {%url 'itineraires:modifierSortie' sortie.id %}  >  modifier </a>  </td>
+            <td>  {{ sortie.sortie_itineraire}}  </td>
+            <td>{{ sortie.date}}</td>
+            <td> <a href= {% url 'itineraires:detail_sortie' sortie.id %}> detail  </a> </td>
+            <td> <a href= {%url 'itineraires:modifierSortie' sortie.id %}> modifier </a>  </td>
         </tr>
         {% endfor %}
     </tbody>

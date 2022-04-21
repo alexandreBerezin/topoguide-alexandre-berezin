@@ -3,12 +3,14 @@
 
 {% block content %}
 
+
 <form action= {% url 'itineraires:creerSortie' %} method="post">
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit">
 </form>
 
+<p> Date à rentrer sous la forme AAAA-MM-JJ HH:MN:SS </p>
 
 {% endblock %}
 
