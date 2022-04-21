@@ -1,10 +1,8 @@
 {% extends 'itineraires/base_logged.html' %}
 
-
 {% block content %}
 
 <h3>détail de l'intinéraire : {{itineraire.title}}  </h3>
-
 <table border="1">
     <thead>
         <tr>
@@ -36,8 +34,6 @@
 <p> {{itineraire.description}} </p>
 
 
-
-
 <h3>Liste des sorties disponibles:  </h3>
 
 {% if liste_Sortie %}
@@ -48,13 +44,15 @@
         </tr>
     </thead>
     <tbody>
+        {% for sortie in liste_Sortie %}
         <tr>
-            {% for sortie in liste_Sortie %}
-            <td>{{ sortie.user }}</td>
+
+            <td>{{sortie.user }}</td>
             <td>{{sortie.date}}</td>
             <td> <a href= {% url 'itineraires:detail_sortie' sortie.id %}> detail   </a> </td>
-            {% endfor %}
+
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 

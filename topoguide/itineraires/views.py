@@ -45,12 +45,18 @@ def listeSorties(request,id_itineraire):
 @login_required()
 def create_sortie(request):
     username = request.user.username
+    sortie_pre = Sortie()
     if request.method == 'GET':
-        form = SortieForm()
+        form = SortieForm(instance =sortie_pre )
     elif request.method == 'POST':
-        form = SortieForm(request.POST)
+        form = SortieForm(request.POST,instance=sortie_pre)
         if form.is_valid():
+            form.instance.user = request.user
             form.save()
+        else:
+            print("FORM NON VALIDE")
+            print (form.errors)
+            return HttpResponse('Error dans le form ' + str(form.errors))
         return redirect('itineraires:creerSortie')
     return render(request,
 'itineraires/create_sortie.html', {'form': form,'username': username})
