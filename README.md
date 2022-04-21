@@ -20,10 +20,10 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
     basique //OK
 
 4. Visualisation d'une sortie
-    basique
+    basique //OK
 
 5. Saisie d'une sortie
-    basique
+    basique // OK
 
 6. Modification d'une sortie (uniquement par l'utilisateur qui a saisi la sortie)
     basique

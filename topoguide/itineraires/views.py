@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -6,6 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 from itineraires.models import Itineraire, Sortie
+
+from itineraires.forms import SortieForm
+
+
 
 
 def index(request):
@@ -28,6 +32,18 @@ def listeSorties(request,id_itineraire):
     context = {'liste_Sortie': liste_Sorties}
     return render(request, 'itineraires/sortie_liste.html', context)
 
+
+def create_sortie(request):
+    if request.method == 'GET':
+        form = SortieForm()
+    elif request.method == 'POST':
+        form = SortieForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('itineraires:creerSortie')
+    return render(request,
+'itineraires/create_sortie.html', {'form': form})
+    
 
 @login_required()
 def loginIndex(request):
