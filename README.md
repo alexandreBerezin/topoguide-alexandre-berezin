@@ -26,7 +26,7 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
     basique // OK
 
 6. Modification d'une sortie (uniquement par l'utilisateur qui a saisi la sortie)
-    basique
+    basique //OK 
 
 
 # modèle itinéaraire  
@@ -50,3 +50,8 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 - l'expérience du groupe (à choisir dans une liste tous débutants, tous expérimentés, mixte)
 - la météo (à choisir dans une liste bonne, moyenne, mauvaise)
 - la difficulté ressentie (de 1 à 5)
+
+
+# Navigation 
+- boutons de navigation 
+- boutons de connection

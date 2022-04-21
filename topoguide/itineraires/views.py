@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -44,6 +44,19 @@ def create_sortie(request):
     return render(request,
 'itineraires/create_sortie.html', {'form': form})
     
+
+def update_sortie(request,id_sortie):
+    sortie = get_object_or_404(Sortie,pk=id_sortie)
+    if request.method == 'GET':
+        form = SortieForm(instance=sortie)
+    elif request.method == 'POST':
+        form = SortieForm(request.POST,instance=sortie)
+        if form.is_valid():
+            form.save()
+        return redirect('itineraires:creerSortie')
+    return render(request,
+'itineraires/update_sortie.html', {'form': form})
+
 
 @login_required()
 def loginIndex(request):

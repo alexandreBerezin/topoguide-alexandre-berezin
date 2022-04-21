@@ -1,0 +1,6 @@
+<form action="{% url 'itineraires:modifierSortie' form.instance.id %}"
+method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit">Update</button>
+</form>
