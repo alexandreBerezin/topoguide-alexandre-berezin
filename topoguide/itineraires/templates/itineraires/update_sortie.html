@@ -1,13 +1,14 @@
 
+{% extends 'itineraires/base_logged.html' %}
+
+{% block content %}
 
 <form action="{% url 'itineraires:modifierSortie' form.instance.id %}"
 method="post">
 {% csrf_token %}
 {{ form.as_p }}
-<input type="submit">Update</button>
+<input type="submit"></button>
 </form>
 
 
-<form action= {% url 'itineraires:itinerairesList'%} >
-    <button type="submit">liste des itinéraires</button>
-  </form>
+  {% endblock %}
