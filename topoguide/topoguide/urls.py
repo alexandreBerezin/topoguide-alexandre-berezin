@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from itineraires import views
+
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('itineraires/', include('itineraires.urls')),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
 ]

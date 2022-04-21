@@ -12,27 +12,32 @@ from itineraires.forms import SortieForm
 
 
 
+
 def index(request):
-    return HttpResponse("Index de l'application itineraires: pour se connecteur cliquer ici : ")
+    context = {}
+    return render(request, 'itineraires/index.html', context)
 
 def logout_view(request):
     logout(request)
     # Redirect to a success page.
-    return HttpResponse("Déconnection réussie")
+    return redirect('index')
 
-
+@login_required()
 def listeItineraires(request):
     liste_Itineraires = Itineraire.objects.all()
     context = {'liste_Itineraires': liste_Itineraires}
     return render(request, 'itineraires/itineraires_liste.html', context)
 
+@login_required()
 def listeSorties(request,id_itineraire):
+    itineraire = get_object_or_404(Itineraire,pk=id_itineraire)
     liste_Sorties = Sortie.objects.filter(sortie_itineraire = id_itineraire)
     print(liste_Sorties)
-    context = {'liste_Sortie': liste_Sorties}
+    context = {'liste_Sortie': liste_Sorties,
+               'titre_itineraire' : itineraire.title}
     return render(request, 'itineraires/sortie_liste.html', context)
 
-
+@login_required()
 def create_sortie(request):
     if request.method == 'GET':
         form = SortieForm()
@@ -44,7 +49,7 @@ def create_sortie(request):
     return render(request,
 'itineraires/create_sortie.html', {'form': form})
     
-
+@login_required()
 def update_sortie(request,id_sortie):
     sortie = get_object_or_404(Sortie,pk=id_sortie)
     if request.method == 'GET':

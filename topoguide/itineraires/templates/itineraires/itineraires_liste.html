@@ -1,11 +1,26 @@
 
+<h1>Topoguide</h1>
+<h2>Liste des itinéraires disponible </h2>
+
+
 {% if liste_Itineraires %}
-{% for itineraire in liste_Itineraires %}
-{{ itineraire.title }}
+<ul>
+  {% for itineraire in liste_Itineraires %}
+  <li> <a href= {% url 'itineraires:vueSortie' itineraire.pk %}>  {{ itineraire.title }} </a>   </li>
 {% endfor %}
+</ul>
+
 {% else %}
 
 
 Pas d'itinéraires enregistrés
 
 {% endif %}
+
+<form action= {% url 'itineraires:creerSortie'%} >
+  <button type="submit">créer une sortie</button>
+</form>
+
+<form action= {% url 'itineraires:logout'%} >
+    <button type="submit">Se deconnecter</button>
+  </form>

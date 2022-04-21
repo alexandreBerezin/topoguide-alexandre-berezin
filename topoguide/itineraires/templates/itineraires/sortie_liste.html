@@ -1,11 +1,37 @@
+<h1>Topoguide</h1>
+<h2>itineraire: {{titre_itineraire }} </h2>
+<h3>Liste des sorties disponibles:  </h3>
 
 {% if liste_Sortie %}
-{% for sortie in liste_Sortie %}
-{{ sortie.user }} et {{sortie.sortie_itineraire}}
-{% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th>Liste de sorties</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for sortie in liste_Sortie %}
+            <td>{{ sortie.user }}</td>
+            <td>{{sortie.sortie_itineraire}}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+
 {% else %}
 
 
 Pas de sorties renseignés
 
 {% endif %}
+
+<form action= {% url 'itineraires:itinerairesList'%} >
+    <button type="submit">liste des itinéraires</button>
+  </form>
+
+  
+  <form action= {% url 'itineraires:logout'%} >
+      <button type="submit">Se deconnecter</button>
+    </form>

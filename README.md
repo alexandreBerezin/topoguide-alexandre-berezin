@@ -54,4 +54,5 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 
 # Navigation 
 - boutons de navigation 
+    se connecter /deconnecter // OK
 - boutons de connection
