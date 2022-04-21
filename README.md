@@ -11,8 +11,8 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 
 2. Une page de liste des itinéraires
     basique // OK 
-    compléter le modèles de itinéraires
-    afficher la page sous forme de tableau 
+    compléter le modèles de itinéraires //OK
+    afficher la page sous forme de tableau  //ok
 
 
 3. Une page de liste des sorties partagées pour un itinéraire particulier
@@ -29,7 +29,7 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
     basique //OK 
 
 
-# modèle itinéaraire  
+# modèle itinéaraire  //OK
 - le titre
 - le point de départ
 - la description
@@ -41,7 +41,7 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 - la durée estimée (en heures)
 - la difficulté estimée (de 1 à 5)
 
-# modèle sortie 
+# modèle sortie //OK
 - l'utilisateur qui a enregistré la sortie
 - l'itinéraire correspondant dans le topoguide
 - la date de la sortie
@@ -55,4 +55,4 @@ Nous allons réaliser une application Topoguide dont le but est de gérer un jou
 # Navigation 
 - boutons de navigation 
     se connecter /deconnecter // OK
-- boutons de connection
+- boutons de connection // OK
