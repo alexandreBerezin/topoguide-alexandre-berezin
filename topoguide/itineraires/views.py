@@ -58,9 +58,19 @@ def update_sortie(request,id_sortie):
         form = SortieForm(request.POST,instance=sortie)
         if form.is_valid():
             form.save()
-        return redirect('itineraires:creerSortie')
+        return redirect('itineraires:mesSorties')
     return render(request,
 'itineraires/update_sortie.html', {'form': form})
+
+
+@login_required()
+def mySorties(request):
+    current_user = request.user
+    liste_Sorties = Sortie.objects.filter( user = current_user.id)
+    context = {'id': current_user.id,
+               'liste_Sortie' : liste_Sorties}
+    
+    return render(request,'itineraires/mySorties.html', context)
 
 
 @login_required()

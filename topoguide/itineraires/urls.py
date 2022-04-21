@@ -12,4 +12,5 @@ urlpatterns = [
     path('sorties/<int:id_itineraire>', views.listeSorties, name='vueSortie'),
     path('sorties/create', views.create_sortie, name='creerSortie'),
     path('sorties/update/<int:id_sortie>', views.update_sortie, name='modifierSortie'),
+    path('sorties/mySorties', views.mySorties, name='mesSorties'),
 ]

@@ -17,6 +17,11 @@ Pas d'itinéraires enregistrés
 
 {% endif %}
 
+<form action= {% url 'itineraires:mesSorties'%} >
+  <button type="submit">Mes Sorties</button>
+</form>
+
+
 <form action= {% url 'itineraires:creerSortie'%} >
   <button type="submit">créer une sortie</button>
 </form>
@@ -24,3 +29,4 @@ Pas d'itinéraires enregistrés
 <form action= {% url 'itineraires:logout'%} >
     <button type="submit">Se deconnecter</button>
   </form>
+
