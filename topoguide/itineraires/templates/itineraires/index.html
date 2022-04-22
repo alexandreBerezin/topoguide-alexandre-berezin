@@ -6,7 +6,7 @@
         <h1><img src="{% static 'itineraires/rando.png' %}"  width="50" height="50"> Topoguide  </h1>
         <h2>L'application de randonnée </h2>
         <p> Vous devez vous connecter pour utiliser l'application 
-        <form action='accounts/login'>
+        <form action={% url 'login' %}>
             <button type="submit">Se connecter</button>
         </form>
 
